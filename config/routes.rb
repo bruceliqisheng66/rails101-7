@@ -6,9 +6,13 @@ Rails.application.routes.draw do
           post :join
           post :quit
         end
-    
+
     resources :posts
   end
-    root 'groups#index'
-  #root 'welcome#index'
+
+  namespace :account do
+    resources :groups
+  end
+
+  root 'groups#index'
 end
